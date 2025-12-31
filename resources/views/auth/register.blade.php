@@ -1,52 +1,94 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{asset("contents/admin")}}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset("contents/admin")}}/css/all.min.css">
+    <link rel="stylesheet" href="{{asset("contents/admin")}}/css/style.css">
+  </head>
+  <body>
+    <div class="login-page bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                  <h3 class="mb-3">Register New Account</h3>
+                    <div class="bg-white shadow rounded">
+                        <div class="row">
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                               <div class="col-md-5 ps-0 d-none d-md-block">
+                                  <div class="form-right d-flex flex-column justify-content-center h-100 bg-primary text-white text-center pt-5"><i class="fas fa-user-shield"></i>
+                                  <h2 class="fs-1">AWDD-2508</h2>
+                                  </div>
+                              </div>
+
+                            <div class="col-md-7 pe-0">
+                                <div class="form-left h-100 py-5 px-5">
+                                    <form action="{{route('register')}}" method="post" class="row g-4">
+                                        @csrf
+                                        <div class="col-12">
+                                            <label>Full Name<span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-text"><i class="fas fa-user"></i></div>
+                                                <input type="name"  class="form-control" placeholder="Enter name" name="name">
+                                            </div>
+                                        </div>
+
+
+                                         <div class="col-12">
+                                            <label>Email<span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-text"><i class="fas fa-user"></i></div>
+                                                <input type="email"  class="form-control" placeholder="Enter email" name="email">
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="col-12">
+                                            <label>Password<span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                                                <input type="text" name="passward" class="form-control" placeholder="Enter Password" name="passward">
+                                            </div>
+                                        </div>
+
+                                        
+
+                                        <div class="col-12">
+                                            <label>Confirm Password<span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                                                <input type="text" name="passward" class="form-control" placeholder="Confirm Password" name="passward_confirmation">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-6">
+                                            <a href="{{ route('login') }}" class="text-primary text-nowrap">Already have an account?</a>
+                                            
+                                        </div>
+
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary px-4 float-end mt-4">Register</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            {{-- <div class="col-md-5 ps-0 d-none d-md-block">
+                                <div class="form-right h-100 bg-primary text-white text-center pt-5">
+                                    <i class="fas fa-user-shield"></i>
+                                    <h2 class="fs-1">Welcome Back!!!</h2>
+                                </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    </div>
+    <script src="{{asset("contents/admin")}}/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset("contents/admin")}}/js/custom.js"></script>
+  </body>
+</html>

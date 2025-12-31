@@ -19,7 +19,7 @@
                     <div class="dropdown">
                       <button class="btn dropdown-toggle top_right_btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                           <img src="{{asset("contents/admin")}}/images/avatar.png" class="img-fluid">
-                          Abir Mahamud
+                          {{Auth::user()->name}}
                       </button>
                       <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#"><i class="fas fa-user-tie"></i> My Profile</a></li>
@@ -45,7 +45,7 @@
                 <div class="col-md-2 sidebar_part">
                     <div class="user_part">
                         <img class="" src="{{asset("contents/admin")}}/images/avatar.png" alt="avatar"/>
-                        <h5>Abir Mahamud</h5>
+                        <h5>{{Auth::user()->name}}</h5>
                         <p><i class="fas fa-circle"></i> Online</p>
                     </div>
                     <div class="menu">
@@ -78,7 +78,7 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-10 copyright">
-                    <p>Copyright &copy; 2025 | All rights reserved by Dashboard | Development By <a href="#">Abir Mahamud.</a></p>
+                    <p>Copyright &copy; 2025 | All rights reserved by Dashboard | Development By <a href="#">{{Auth::user()->name}}.</a></p>
                 </div>
                 <div class="clr"></div>
             </div>
