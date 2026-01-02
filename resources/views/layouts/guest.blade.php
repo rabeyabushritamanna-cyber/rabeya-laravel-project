@@ -11,6 +11,12 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        
+
+        <link rel="stylesheet" href="{{asset("contents/admin")}}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{asset("contents/admin")}}/css/all.min.css">
+        <link rel="stylesheet" href="{{asset("contents/admin")}}/css/style.css">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -26,5 +32,8 @@
                 {{ $slot }}
             </div>
         </div>
+
+<script src="{{asset("contents/admin")}}/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset("contents/admin")}}/js/custom.js"></script>
     </body>
 </html>

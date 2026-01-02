@@ -26,6 +26,7 @@
 
                             <div class="col-md-7 pe-0">
                                 <div class="form-left h-100 py-5 px-5">
+                                    {{-- from --}}
                                     <form action="{{route('register')}}" method="post" class="row g-4">
                                         @csrf
                                         <div class="col-12">
@@ -50,7 +51,7 @@
                                             <label>Password<span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="fas fa-lock"></i></div>
-                                                <input type="text" name="passward" class="form-control" placeholder="Enter Password" name="passward">
+                                                <input type="password" name="password" class="form-control" placeholder="Enter Password" >
                                             </div>
                                         </div>
 
@@ -60,7 +61,7 @@
                                             <label>Confirm Password<span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="fas fa-lock"></i></div>
-                                                <input type="text" name="passward" class="form-control" placeholder="Confirm Password" name="passward_confirmation">
+                                                <input type="password" name="passward_confirmation" class="form-control" placeholder="Enter Confirm Password">
                                             </div>
                                         </div>
 

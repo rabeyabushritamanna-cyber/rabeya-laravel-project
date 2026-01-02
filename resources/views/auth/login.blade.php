@@ -27,7 +27,7 @@
                                             <label>Email<span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="fas fa-user"></i></div>
-                                                <input type="email"  class="form-control" placeholder="Enter email">
+                                                <input type="email" name="email" class="form-control" placeholder="Enter email">
                                             </div>
                                         </div>
 
@@ -35,7 +35,7 @@
                                             <label>Password<span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="fas fa-lock"></i></div>
-                                                <input type="text" name="passward" class="form-control" placeholder="Enter Password">
+                                                <input type="password" name="password" class="form-control" placeholder="Enter Password">
                                             </div>
                                         </div>
 
@@ -59,7 +59,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-primary px-4 float-end mt-4">login</button>
+                                            <button type="submit" class="btn btn-primary px-4 float-end mt-4">Login</button>
                                         </div>
                                     </form>
                                 </div>
