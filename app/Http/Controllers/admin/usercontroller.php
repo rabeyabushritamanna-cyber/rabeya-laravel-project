@@ -10,7 +10,7 @@ class usercontroller extends Controller
 {
    public function all(){
       $allUser= User::orderBy('id')-> get();
-    return view('admin.user.all', compact('allUser'));
+     return view('admin.user.all', compact('allUser'));
    }
 
     public function add(){

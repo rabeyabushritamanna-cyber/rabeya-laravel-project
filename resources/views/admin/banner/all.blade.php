@@ -18,7 +18,7 @@
                               <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-8 card_title_part">
-                                        <i class="fab fa-gg-circle"></i>All User Information
+                                        <i class="fab fa-gg-circle"></i>All Banner Information
                                     </div>  
                                     <div class="col-md-4 card_button_part">
                                         <a href="{{route('add.banner')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i>Add User</a>
@@ -30,17 +30,17 @@
                                   <thead class="table-dark">
                                     <tr>
                                       <th>Banner Title</th>
-                                      <th>Subtitle</th>
-                                      <th>Button</th>
-                                      <th>Photo</th>
-                                      <th>Role</th>
-                                      <th>Manage</th>
+                                      <th>Banner Subtitle</th>
+                                      <th>Banner Button</th>
+                                      <th>Banner Image</th>
+                                      <th>Created At</th>
+                                      {{-- <th>Manage</th> --}}
                                     </tr>
                                   </thead>
                                   <tbody>
-                                   
+                                   @foreach($allbanner as $bandata)
                                     <tr>
-                                      <td></td>
+                                      <td>{{$bandata-> ban_title}}</td>
                                       <td>01757220125</td>
                                       <td></td>
                                       <td>raseldevs</td>
@@ -57,7 +57,7 @@
                                       </td>
                                     </tr>
                                   
-                           
+                                    @endforeach
                   
                                   </tbody>
                                 </table>

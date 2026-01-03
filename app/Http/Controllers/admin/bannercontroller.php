@@ -9,7 +9,8 @@ use app\Models\banner;
 class bannercontroller extends Controller
 {
     public function all(){
-    return view('admin.banner.all' );
+        $bandata = banner::orderBy('ban_id', 'DESC')->get();
+        return view('admin.banner.all', compact('bandata'));
    }
 
     public function add(){
@@ -25,17 +26,18 @@ class bannercontroller extends Controller
    }
 
    public function insert(Request $request){
-    $insert = Banner::insert([
-    'ban_title' => $request['title'],
-    'ban_subtitle' => $request['subtitle'],
-    'ban_btn' => $request['button'],
-    'ban_url' => $request['url'],
-    'created_at' => Carbon::now(),]);
-    
-    if ($insert) {
-    return redirect()->route('banner.all');
-    } else {
-    return redirect()->route('banner.add'); 
+        $insert = Banner::insert([
+            'ban_title' => $request['title'],
+            'ban_subtitle' => $request['subtitle'],
+            'ban_btn' => $request['button'],
+            'ban_url' => $request['url'],
+            'created_at' => Carbon::now(),]);
+
+        if ($insert) {
+        return redirect()->route('banner.all');
+        } else {
+        return redirect()->route('banner.add');}
     }
-    }
+
 }
+

@@ -36,7 +36,9 @@ Route::middleware('auth')->get('/dashboard/banner/add',[bannerController::class,
 Route::middleware('auth')->get('/dashboard/banner/view',[bannerController::class, 'view'])->name('view.banner');
 Route::middleware('auth')->get('/dashboard/banner/edit',[bannerController::class, 'edit'])->name('edit.banner');
 
+// .................... Banner-Add.....................................................................................
 
+Route::middleware('auth')->post('/dashboard/banner/add/insert', [BannerController::class, 'insert'])->name('banner.insert');
 
 
 require __DIR__.'/auth.php';
