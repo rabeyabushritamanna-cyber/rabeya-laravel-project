@@ -26,7 +26,7 @@ class bannercontroller extends Controller
    }
 
    public function insert(Request $request){
-        $insert = Banner::insert([
+        $insert = banner::insert([
             'ban_title' => $request['title'],
             'ban_subtitle' => $request['subtitle'],
             'ban_btn' => $request['button'],
